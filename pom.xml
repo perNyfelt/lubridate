@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <!-- This pom file must be run inside the vagrant container -->
+   <modelVersion>4.0.0</modelVersion>
+   <groupId>org.renjin.cran</groupId>
+   <artifactId>lubridate</artifactId>
+   <version>1.7.10</version>
+   <description>Functions to work with date-times and time-spans:
+      fast and user friendly parsing of date-time data, extraction and
+      updating of components of a date-time (years, months, days, hours,
+      minutes, and seconds), algebraic manipulation on date-time and
+      time-span objects. The 'lubridate' package has a consistent and
+      memorable syntax that makes working with dates easy and fun.  Parts of
+      the 'CCTZ' source code, released under the Apache 2.0 License, are
+      included in this package. See https://github.com/google/cctz for
+      more details.</description>
+   <url>https://github.com/perNyfelt/lubridate</url>
+   <licenses>
+      <license>
+         <name>GPL (>= 2)</name>
+         <url>https://github.com/perNyfelt/lubridate/blob/main/LICENSE.md</url>
+      </license>
+   </licenses>
+   <developers>
+      <developer>
+         <name>Vitalie Spinu</name>
+         <email>spinuvit@gmail.com"</email>
+         <roles>
+            <role>aut</role>
+            <role>cre</role>
+         </roles>
+      </developer>
+      <developer>
+         <name>Garrett Grolemund</name>
+         <roles><role>aut</role></roles>
+      </developer>
+      <developer>
+         <name>Hadley Wickham</name>
+         <roles><role>aut</role></roles>
+      </developer>
+      <developer>
+         <name>Ian Lyttle</name>
+         <roles><role>ctb</role></roles>
+      </developer>
+      <developer>
+         <name>Imanuel Costigan</name>
+         <roles><role>ctb</role></roles>
+      </developer>
+      <developer>
+         <name>Jason Law</name>
+         <roles><role>ctb</role></roles>
+      </developer>
+      <developer>
+         <name>Doug Mitarotonda</name>
+         <roles><role>ctb</role></roles>
+      </developer>
+      <developer>
+         <name>Joseph Larmarange</name>
+         <roles><role>ctb</role></roles>
+      </developer>
+      <developer>
+         <name>Jonathan Boiser</name>
+         <roles><role>ctb</role></roles>
+      </developer>
+      <developer>
+         <name>Chel Hee Lee</name>
+         <roles><role>ctb</role></roles>
+      </developer>
+      <developer>
+         <name>Google Inc.</name>
+         <roles>
+            <role>ctb</role>
+            <role>cph</role>
+         </roles>
+      </developer>
+      <developer>
+         <name>Per Nyfelt</name>
+         <email>per.nyfelt@alipsa.se</email>
+         <organization>Alipsa HB</organization>
+         <organizationUrl>http://www.alipsa.se</organizationUrl>
+         <roles><role>ctb</role></roles>
+      </developer>
+   </developers>
+   <scm>
+      <connection>scm:git:https://github.com/Alipsa/sas-reader.git</connection>
+      <developerConnection>scm:git:https://github.com/Alipsa/sas-reader.git</developerConnection>
+      <url>https://github.com/perNyfelt/Alipsa/tree/master</url>
+   </scm>
+   <properties>
+      <maven.compiler.source>1.8</maven.compiler.source>
+      <maven.compiler.target>1.8</maven.compiler.target>
+      <renjin.version>3.5-beta76</renjin.version>
+   </properties>
+   <dependencies>
+      <dependency>
+         <groupId>org.renjin</groupId>
+         <artifactId>methods</artifactId>
+         <version>${renjin.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.renjin</groupId>
+         <artifactId>datasets</artifactId>
+         <version>${renjin.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.renjin</groupId>
+         <artifactId>stats</artifactId>
+         <version>${renjin.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.renjin</groupId>
+         <artifactId>stats4</artifactId>
+         <version>${renjin.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.renjin</groupId>
+         <artifactId>tools</artifactId>
+         <version>${renjin.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.renjin</groupId>
+         <artifactId>utils</artifactId>
+         <version>${renjin.version}</version>
+      </dependency>
+   </dependencies>
+   <repositories>
+      <repository>
+         <id>bedatadriven</id>
+         <url>https://nexus.bedatadriven.com/content/groups/public/</url>
+      </repository>
+   </repositories>
+   <pluginRepositories>
+      <pluginRepository>
+         <id>bedatadriven</id>
+         <url>https://nexus.bedatadriven.com/content/groups/public/</url>
+      </pluginRepository>
+   </pluginRepositories>
+   <build>
+      <sourceDirectory>${project.basedir}/java</sourceDirectory>
+      <plugins>
+         <plugin>
+            <groupId>org.renjin</groupId>
+            <artifactId>renjin-maven-plugin</artifactId>
+            <version>${renjin.version}</version>
+            <executions>
+               <execution>
+                  <id>renjin-compile</id>
+                  <phase>process-classes</phase>
+                  <goals>
+                     <goal>namespace-compile</goal>
+                  </goals>
+                  <configuration>
+                     <sourceDirectory>${basedir}/R</sourceDirectory>
+                     <dataDirectory>${basedir}/data</dataDirectory>
+                  </configuration>
+               </execution>
+               <!--execution>
+                  <id>renjin-test</id>
+                  <phase>test</phase>
+                  <goals>
+                     <goal>test</goal>
+                  </goals>
+                  <configuration>
+                     <timeoutInSeconds>30</timeoutInSeconds>
+                     <testSourceDirectory>${basedir}/tests</testSourceDirectory>
+                     <defaultPackages>
+                        <package>methods</package>
+                        <package>stats</package>
+                        <package>utils</package>
+                        <package>grDevices</package>
+                        <package>graphics</package>
+                        <package>datasets</package>
+                     </defaultPackages>
+                  </configuration>
+               </execution-->
+            </executions>
+         </plugin>
+         <plugin>
+            <groupId>se.alipsa</groupId>
+            <artifactId>renjin-test-maven-plugin</artifactId>
+            <version>1.3.6</version>
+            <configuration>
+               <testFailureIgnore>false</testFailureIgnore>
+            </configuration>
+            <executions>
+               <execution>
+                  <phase>test</phase>
+                  <goals>
+                     <goal>testR</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <dependencies>
+               <dependency>
+                  <groupId>org.renjin</groupId>
+                  <artifactId>renjin-script-engine</artifactId>
+                  <version>${renjin.version}</version>
+                  <exclusions>
+                     <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                     </exclusion>
+                  </exclusions>
+               </dependency>
+               <dependency>
+                  <groupId>org.renjin.cran</groupId>
+                  <artifactId>testthat</artifactId>
+                  <version>1.0.2-renjin-17</version>
+               </dependency>
+               <dependency>
+                  <groupId>org.slf4j</groupId>
+                  <artifactId>slf4j-log4j12</artifactId>
+                  <version>1.7.36</version>
+               </dependency>
+               <dependency>
+                  <groupId>org.slf4j</groupId>
+                  <artifactId>jcl-over-slf4j</artifactId>
+                  <version>1.7.36</version>
+               </dependency>
+            </dependencies>
+         </plugin>
+      </plugins>
+   </build>
+</project>

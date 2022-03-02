@@ -26,3 +26,4 @@ announcement.*
 *.Rcheck
 *.tar.gz
 .Rprofile
+/target/

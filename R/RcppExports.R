@@ -2,11 +2,13 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 C_local_tz <- function() {
-    .Call(`_lubridate_C_local_tz`)
+    #.Call(`_lubridate_C_local_tz`)
+    TimeZoneUtil$localTimeZone()
 }
 
 C_valid_tz <- function(tz_name) {
-    .Call(`_lubridate_C_valid_tz`, tz_name)
+    # .Call(`_lubridate_C_valid_tz`, tz_name)
+    TimeZoneUtil$validTimeZone(tz_name)
 }
 
 C_update_dt <- function(dt, year, month, yday, mday, wday, hour, minute, second, tz = NULL, roll = FALSE, week_start = 7L) {
