@@ -27,3 +27,4 @@ announcement.*
 *.tar.gz
 .Rprofile
 /target/
+/.idea/
