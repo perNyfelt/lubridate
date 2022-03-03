@@ -49,82 +49,80 @@ License: GPL (>= 2)
 URL: https://lubridate.tidyverse.org,
     https://github.com/tidyverse/lubridate
 BugReports: https://github.com/tidyverse/lubridate/issues
-Depends:
-    methods,
-    R (>= 3.2)
+Depends: methods, R (>= 3.2)
 Imports:
-    generics,
-    Rcpp (>= 0.12.13)
+  generics,
+  Rcpp (>= 0.12.13)
 Suggests:
-    covr,
-    knitr,
-    testthat (>= 2.1.0),
-    vctrs (>= 0.3.0),
-    rmarkdown
+  covr,
+  knitr,
+  testthat (>= 2.1.0),
+  vctrs (>= 0.3.0),
+  rmarkdown
 Enhances:
-    chron,
-    timeDate,
-    tis,
-    zoo
+  chron,
+  timeDate,
+  tis,
+  zoo
 LinkingTo:
-    Rcpp
+  Rcpp
 VignetteBuilder:
-    knitr
+  knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 SystemRequirements: A system with zoneinfo data (e.g.
-    /usr/share/zoneinfo) as well as a recent-enough C++11 compiler (such
-    as g++-4.8 or later). On Windows the zoneinfo included with R is used.
+  /usr/share/zoneinfo) as well as a recent-enough C++11 compiler (such
+  as g++-4.8 or later). On Windows the zoneinfo included with R is used.
 Collate:
-    'Dates.r'
-    'POSIXt.r'
-    'RcppExports.R'
-    'util.r'
-    'parse.r'
-    'timespans.r'
-    'intervals.r'
-    'difftimes.r'
-    'durations.r'
-    'periods.r'
-    'accessors-date.R'
-    'accessors-day.r'
-    'accessors-dst.r'
-    'accessors-hour.r'
-    'accessors-minute.r'
-    'accessors-month.r'
-    'accessors-quarter.r'
-    'accessors-second.r'
-    'accessors-tz.r'
-    'accessors-week.r'
-    'accessors-year.r'
-    'am-pm.r'
-    'time-zones.r'
-    'numeric.r'
-    'coercion.r'
-    'constants.r'
-    'cyclic_encoding.r'
-    'data.r'
-    'decimal-dates.r'
-    'deprecated.r'
-    'format_ISO8601.r'
-    'guess.r'
-    'hidden.r'
-    'instants.r'
-    'leap-years.r'
-    'ops-addition.r'
-    'ops-compare.r'
-    'ops-division.r'
-    'ops-integer-division.r'
-    'ops-m+.r'
-    'ops-modulo.r'
-    'ops-multiplication.r'
-    'ops-subtraction.r'
-    'package.r'
-    'pretty.r'
-    'round.r'
-    'stamp.r'
-    'update.r'
-    'vctrs.R'
-    'zzz.R'
+  'Dates.r'
+  'POSIXt.r'
+  'RcppExports.R'
+  'util.r'
+  'parse.r'
+  'timespans.r'
+  'intervals.r'
+  'difftimes.r'
+  'durations.r'
+  'periods.r'
+  'accessors-date.R'
+  'accessors-day.r'
+  'accessors-dst.r'
+  'accessors-hour.r'
+  'accessors-minute.r'
+  'accessors-month.r'
+  'accessors-quarter.r'
+  'accessors-second.r'
+  'accessors-tz.r'
+  'accessors-week.r'
+  'accessors-year.r'
+  'am-pm.r'
+  'time-zones.r'
+  'numeric.r'
+  'coercion.r'
+  'constants.r'
+  'cyclic_encoding.r'
+  'data.r'
+  'decimal-dates.r'
+  'deprecated.r'
+  'format_ISO8601.r'
+  'guess.r'
+  'hidden.r'
+  'instants.r'
+  'leap-years.r'
+  'ops-addition.r'
+  'ops-compare.r'
+  'ops-division.r'
+  'ops-integer-division.r'
+  'ops-m+.r'
+  'ops-modulo.r'
+  'ops-multiplication.r'
+  'ops-subtraction.r'
+  'package.r'
+  'pretty.r'
+  'round.r'
+  'stamp.r'
+  'update.r'
+  'vctrs.R'
+  'zzz.R'
