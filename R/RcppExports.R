@@ -12,18 +12,23 @@ C_valid_tz <- function(tz_name) {
 }
 
 C_update_dt <- function(dt, year, month, yday, mday, wday, hour, minute, second, tz = NULL, roll = FALSE, week_start = 7L) {
-    .Call(`_lubridate_C_update_dt`, dt, year, month, yday, mday, wday, hour, minute, second, tz, roll, week_start)
+    #.Call(`_lubridate_C_update_dt`, dt, year, month, yday, mday, wday, hour, minute, second, tz, roll, week_start)
+    TimeZoneUtil$updateDt(dt, year, month, yday, mday, wday, hour, minute, second, tz, roll, week_start)
+    stop("C_update_dt not ported to java yet")
 }
 
 C_force_tz <- function(dt, tz, roll = FALSE) {
-    .Call(`_lubridate_C_force_tz`, dt, tz, roll)
+    #.Call(`_lubridate_C_force_tz`, dt, tz, roll)
+    stop("C_force_tz not ported to java yet")
 }
 
 C_force_tzs <- function(dt, tzs, tz_out, roll = FALSE) {
-    .Call(`_lubridate_C_force_tzs`, dt, tzs, tz_out, roll)
+    #.Call(`_lubridate_C_force_tzs`, dt, tzs, tz_out, roll)
+    stop("C_force_tzs not ported to java yet")
 }
 
 C_local_time <- function(dt, tzs) {
-    .Call(`_lubridate_C_local_time`, dt, tzs)
+    #.Call(`_lubridate_C_local_time`, dt, tzs)
+    stop("C_local_time not ported to java yet")
 }
 

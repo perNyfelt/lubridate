@@ -136,6 +136,11 @@
          <scope>test</scope>
       </dependency>
       <dependency>
+         <groupId>org.renjin</groupId>
+         <artifactId>hamcrest</artifactId>
+         <version>3.5-beta76</version>
+      </dependency>
+      <dependency>
          <groupId>org.renjin.cran</groupId>
          <artifactId>vctrs</artifactId>
          <version>0.1.0-b14</version>
@@ -215,7 +220,7 @@
                      <goal>testR</goal>
                   </goals>
                   <configuration>
-                     <testFailureIgnore>true</testFailureIgnore>
+                     <testFailureIgnore>false</testFailureIgnore>
                      <sourceDirectory>${project.basedir}/R</sourceDirectory>
                      <testSourceDirectory>${project.basedir}/tests</testSourceDirectory>
                   </configuration>
